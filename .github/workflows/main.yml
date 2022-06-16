@@ -1,4 +1,4 @@
-name: 🚀 Deploy website on push sFTP
+name: 🚀 Deploy website on push FTP
 
 on:
   push:
@@ -13,10 +13,9 @@ jobs:
       uses: actions/checkout@v2
     
     - name: 📂 Sync files
-      uses: SamKirkland/FTP-Deploy-Action@4.3.0
+      uses: wangyucode/sftp-upload-action@v1.3.2
       with:
-        server: 128.199.207.121
-        protocol: ftps
-        username: skuatstaging
+        host: ${{ secrets.server }}
+        username: ${{ secrets.username }}
         password: ${{ secrets.password }}
-        server-dir: /public_html/wp-content/themes/test-sftp/
+        remoteDir: ${{ secrets.dir }}
