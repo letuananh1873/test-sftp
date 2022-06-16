@@ -15,9 +15,9 @@ jobs:
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.3.0
       with:
-        server: ${{ secrets.server }}
-        username: ${{ secrets.username }}
+        server: 128.199.207.121
+        username: skuatstaging
         password: ${{ secrets.password }}
-        server-dir: ${{ secrets.dir }}
+        server-dir: /public_html/wp-content/themes/test-sftp
         protocol: ftps
         port: 22
