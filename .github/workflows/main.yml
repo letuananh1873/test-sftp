@@ -19,8 +19,4 @@ jobs:
         username: ${{ secrets.username }}
         password: ${{ secrets.password }}
         remoteDir: ${{ secrets.dir }}
-<<<<<<< HEAD
         localDir: 'src'
-=======
-        localDir: 'src'
->>>>>>> 67b508017a8d966fc73ec6547f573682913a4371
