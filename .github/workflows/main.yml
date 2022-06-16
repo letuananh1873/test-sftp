@@ -19,4 +19,4 @@ jobs:
         username: ${{ secrets.username }}
         password: ${{ secrets.password }}
         remoteDir: ${{ secrets.dir }}
-        exclude: 'node_modules/,.git/,.github/'
+        exclude: '.github/'
