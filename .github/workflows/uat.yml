@@ -1,0 +1,22 @@
+name: 🚀 Deploy website on UAT push sFTP
+
+on:
+  push:
+    branches: [uat]
+
+jobs:
+  web-deploy:
+    name: 🎉 Deploy
+    runs-on: ubuntu-latest
+    steps:
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v2
+
+    - name: 📂 push to Staging
+      uses: wangyucode/sftp-upload-action@v1.3.2
+      with:
+        host: 149.28.152.84
+        username: oanglela
+        password: fhoXZlVWksnh151133MarbKK
+        remoteDir: /public_html/test-ftp/
+        localDir: 'src'
