@@ -20,11 +20,3 @@ jobs:
         password: ${{ secrets.password }}
         remoteDir: ${{ secrets.dir }}
         localDir: 'src'
-    - name: 📂 push to Staging
-      uses: wangyucode/sftp-upload-action@v1.3.2
-      with:
-        host: ${{ secrets.server }}
-        username: ${{ secrets.username }}
-        password: ${{ secrets.password }}
-        remoteDir: ${{ secrets.dir }}
-        localDir: 'src'
