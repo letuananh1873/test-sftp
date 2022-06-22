@@ -12,11 +12,11 @@ jobs:
     - name: 🚚 Get latest code
       uses: actions/checkout@v2
 
-    - name: 📂 push to Staging
-      uses: wangyucode/sftp-upload-action@v1.3.2
+    - name: 📂 Push to staging
+      uses: SamKirkland/FTP-Deploy-Action@4.3.0
       with:
-        host: 149.28.152.84
-        username: oanglela
-        password: fhoXZlVWksnh151133MarbKK
-        remoteDir: /public_html/test-ftp/
-        localDir: 'src'
+        server: ${{ secrets.uat_server }}
+        username: ${{ secrets.uat_username }}
+        password: ${{ secrets.uat_password }}
+        server-dir: ${{ secrets.uat_dir }}
+        local-dir: ./src/
