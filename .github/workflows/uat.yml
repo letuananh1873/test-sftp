@@ -12,11 +12,20 @@ jobs:
     - name: 🚚 Get latest code
       uses: actions/checkout@v2
 
-    - name: 📂 Push theme to staging ${{ secrets.uat_server }}
+    - name: 📂 Push theme to staging
       uses: SamKirkland/FTP-Deploy-Action@4.3.0
       with:
         server: ${{ secrets.uat_server }}
         username: ${{ secrets.uat_username }}
         password: ${{ secrets.uat_password }}
         server-dir: ${{ secrets.uat_dir }}
-        local-dir: ./src/themes/
+        local-dir: ./src/themes
+
+    - name: 📂 Push plugins to staging
+      uses: SamKirkland/FTP-Deploy-Action@4.3.0
+      with:
+        server: ${{ secrets.uat_server }}
+        username: ${{ secrets.uat_username }}
+        password: ${{ secrets.uat_password }}
+        server-dir: ${{ secrets.uat_dir }}
+        local-dir: ./src/plugins
