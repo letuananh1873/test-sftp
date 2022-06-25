@@ -20,11 +20,3 @@ jobs:
         password: ${{ secrets.uat_password }}
         server-dir: ${{ secrets.uat_dir }}
         local-dir: ./src/themes/
-    - name: 📂 Push plugin to staging ${{ secrets.uat_username }}
-      uses: SamKirkland/FTP-Deploy-Action@4.3.0
-      with:
-        server: ${{ secrets.uat_server }}
-        username: ${{ secrets.uat_username }}
-        password: ${{ secrets.uat_password }}
-        server-dir: ${{ secrets.uat_dir }}
-        local-dir: ./src/plugins/
